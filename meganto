@@ -1,0 +1,40 @@
+
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php --version=1.10.22
+php -r "unlink('composer-setup.php');"
+sudo cp composer.phar /usr/bin/composer
+mysql --version
+
+update-alternatives --config php
+mysql --version
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt-get update && sudo apt-get install elasticsearch
+/etc/init.d/elasticsearch status
+/etc/init.d/elasticsearch start
+ curl -XGET 'localhost:9200'
+ cd /var/www/
+ cd html/
+mkdir magento
+cd magento/
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition:2.4.2 . -vvv
+
+
+
+bin/magento setup:install \
+--base-url=http://magento.local \
+--db-host=localhost \
+--db-name=magento \
+--db-user=prajwal\
+--db-password=P4ssw0rd@ \
+--admin-firstname=prajwal \
+--admin-lastname=joshi \
+--admin-email=prajwal.j@codilar.com\
+--admin-user=admin \
+--admin-password=admin123 \
+--language=en_US \
+--currency=USD \
+--timezone=America/Chicago \
+--use-rewrites=1

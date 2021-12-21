@@ -1,0 +1,11 @@
+composer is a tool for package manager (https://getcomposer.org/download/)
+nginx 
+PHP depends (https://devdocs.magento.com/guides/v2.4/install-gde/system-requirements.html)
+mysql depends (above link)
+elasticsearch
+
+
+
+Magento (https://devdocs.magento.com/guides/v2.4/install-gde/composer.html)
+
+	-	auth keys (https://marketplace.magento.com/)
